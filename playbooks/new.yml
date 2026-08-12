@@ -1,0 +1,8 @@
+- name: new
+  hosts: servers
+  become: yes
+
+  tasks:
+    - name: user
+      command: echo "hi ranit"
+
