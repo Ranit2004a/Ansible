@@ -2,7 +2,10 @@
   hosts: servers
   become: yes
 
+  vars:
+    - name: ranit
   tasks:
     - name: user
-      command: echo "hi ranit"
+      command: echo "hello {{ name }}"
+
 
