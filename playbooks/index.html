@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranit Mondal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+        }
+
+        /* Animated background */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(5px);
+            opacity: 0.6;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 250px;
+            height: 250px;
+            background: #6366f1;
+            top: 10%;
+            left: 10%;
+        }
+
+        .circle:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            background: #ec4899;
+            bottom: 5%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .circle:nth-child(3) {
+            width: 180px;
+            height: 180px;
+            background: #22d3ee;
+            bottom: 20%;
+            left: 25%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(40px, -40px) scale(1.15);
+            }
+        }
+
+        /* Center content */
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            font-weight: 700;
+            letter-spacing: 3px;
+            animation: appear 1.5s ease forwards;
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 18px;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 0.8;
+            }
+        }
+
+        /* Glowing line */
+        .line {
+            width: 0;
+            height: 3px;
+            margin: 20px auto 0;
+            background: white;
+            border-radius: 10px;
+            animation: lineGrow 1.5s ease forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes lineGrow {
+            to {
+                width: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <div class="content">
+        <h1>Ranit Mondal</h1>
+        <div class="line"></div>
+        <p>Welcome to my world ✨</p>
+    </div>
+
+</body>
+</html>
+
+
