@@ -10,11 +10,17 @@
       - jq
       - wget
       - apache2
+
   tasks:
-    - name: install package
+    - name: show packeges 
+      debug:
+        msg: "installing {{ item }}"
+      loop: "{{ packages_to_install }}"  
+      
+
+    - name: Install packages
       apt:
         name: "{{ item }}"
         state: present
       loop: "{{ packages_to_install }}"  
-      debug:
-        msg: "Installing {{ item }}"
+      when: ansible_facts["distribution"] == "Ubuntu"  
